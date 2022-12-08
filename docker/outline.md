@@ -1,7 +1,8 @@
 ## setup:
 
-python3 -m venv <directory_name>
-source <directory_name>/bin/activate
+python3 -m venv .
+chmod +x ./bin/activate
+./bin/activate  
 
 ## Setup
 
