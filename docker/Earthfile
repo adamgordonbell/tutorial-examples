@@ -10,7 +10,6 @@ build:
     RUN pip install -r requirements.txt
 
     COPY app.py app.py
-    RUN false
 
     EXPOSE 5000
 
