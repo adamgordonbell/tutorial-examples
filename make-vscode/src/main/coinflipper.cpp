@@ -28,6 +28,6 @@ int main(int argc,char* argv[]) {
     int iters = atoi(argv[1]);
     int diff = flip_coins(iters);
     if(100 < iters) {
-        printf("With enough trials Heads should be equal to Tails\n");
+        printf("With enough trials Heads should be close to Tails\n");
     }
 }

@@ -1,22 +1,19 @@
 #
 # A simple makefile for compiling a c++ project
 #
-SRC=./src
-TARGET=./target
-GCC = gcc
-CFLAGS = -o $(TARGET)/CoinFlipper.out
-ARGS = 101
-RM = rm -rf
 
 all: clean default test
 
 default: CoinFlipper.cpp
 
 CoinFlipper.cpp: 
-	$(GCC) $(CFLAGS) $(SRC)/main/CoinFlipper.cpp
+	gcc -o ./target/CoinFlipper.out ./src/main/CoinFlipper.cpp
+
+run: CoinFlipper.cpp
+	./target/CoinFlipper.out 10
 
 test: CoinFlipper.cpp
-	$(TARGET)/CoinFlipper.out $(ARGS)
+	./target/CoinFlipper.out 10000
 
 clean: 
-	$(RM) $(TARGET)/*.out
+	rm -rf ./target/*.out
