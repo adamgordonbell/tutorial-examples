@@ -20,6 +20,7 @@ And if you stay to the end, I'll share why makefiles are still a great choice
 # Make file
 * explain how these are all the same
 * except now they all require build, which is nice
+* Caveat: use tabs
 
 # VS code
 * install extension "Makefile Tools"
