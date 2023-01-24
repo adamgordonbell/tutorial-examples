@@ -24,8 +24,7 @@ int flip_coins(int iters) {
 }
 
 int main(int argc,char* argv[]) { 
-    assert (argc == 2);
-    int iters = atoi(argv[1]);
+    int iters =100;
     int diff = flip_coins(iters);
     if(100 < iters) {
         printf("With enough trials Heads should be close to Tails\n");

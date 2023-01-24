@@ -1,4 +1,5 @@
-https://earthly.dev/blog/vscode-make/
+# Golang
+https://earthly.dev/blog/golang-makefile/
 
 # Intro
 Hey, in this video I'm going to show you how and why to use makefiles with go.
@@ -9,11 +10,12 @@ And if you stay to the end, I'll share why makefiles are still a great choice an
 
 * Here is code
 
-* Lang doesn't matter, but this will all make sense at make
-* build: 
-* run: 
-* test: 
-* clean 
+* build: go build -o ./target/${BINARY_NAME}
+   GOARCH=amd64 GOOS=linux go build -o ./target/${BINARY_NAME}-linux main.go 
+
+* run: ./target/${BINARY_NAME}-darwin
+* test: go test ./... 
+* clean  go clean && rm ./target/*
 
 # Make file
 * explain how these are all the same in make

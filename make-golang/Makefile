@@ -1,4 +1,5 @@
 BINARY_NAME=hello-world
+.DEFAULT_GOAL := run
 
 build:
 	GOARCH=amd64 GOOS=darwin go build -o ./target/${BINARY_NAME}-darwin main.go
@@ -7,8 +8,6 @@ build:
 
 run: build
 	./target/${BINARY_NAME}-darwin
-
-build_and_run: build run
 
 clean:
 	go clean
@@ -30,6 +29,3 @@ vet:
 
 lint:
 	golangci-lint run --enable-all
-
-default:
-	build_and_run
