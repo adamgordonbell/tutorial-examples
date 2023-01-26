@@ -8,6 +8,7 @@ run: main.o
 
 clean:
 	rm -rf target/hello
+	rm combined.md
 
 .phony: clean run test
 
@@ -55,7 +56,7 @@ corge = $(corge) and add more
 test2:
 	@echo "bar=$(bar)"
 	@echo "qux=$(qux)"
-#	@echo "corge=$(corge)"
+	@echo "corge=$(corge)"
 		
 #####################
 # Simple assignment

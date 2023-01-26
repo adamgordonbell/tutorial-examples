@@ -1,0 +1,19 @@
+VERSION 0.6
+FROM gcc
+WORKDIR /c-example
+
+all:
+	BUILD +build
+	BUILD +combined
+
+build:
+	COPY --dir src target ./
+	RUN gcc -o target/hello src/main.c 
+	SAVE ARTIFACT target/hello AS LOCAL target/hello
+
+combined:
+	COPY text text
+	RUN echo "hello"
+	RUN cat text/one.md text/two.md text/three.md > combined.md
+	# RUN False
+	SAVE ARTIFACT combined.md  AS LOCAL combined.md
