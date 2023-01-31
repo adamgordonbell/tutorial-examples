@@ -13,7 +13,5 @@ build:
 
 combined:
 	COPY text text
-	RUN echo "hello"
 	RUN cat text/one.md text/two.md text/three.md > combined.md
-	# RUN False
 	SAVE ARTIFACT combined.md  AS LOCAL combined.md
