@@ -1,18 +1,18 @@
 #
 # A simple makefile for compiling a c++ project
 #
-.DEFAULT_GOAL := CoinFlipper.cpp
+.DEFAULT_GOAL := coinflipper.cpp
 
 all: clean test
 
-CoinFlipper.cpp: 
-	gcc -o ./target/CoinFlipper.out ./src/main/CoinFlipper.cpp
+coinflipper.cpp: 
+	gcc -o ./target/coinflipper.out ./src/main/coinflipper.cpp
 
-run: CoinFlipper.cpp
-	./target/CoinFlipper.out 10
+run: coinflipper.cpp
+	./target/coinflipper.out 10
 
-test: CoinFlipper.cpp
-	./target/CoinFlipper.out 10000
+test: coinflipper.cpp
+	./target/coinflipper.out 10000
 
 clean: 
 	rm -rf ./target/*.out
