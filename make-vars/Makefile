@@ -51,8 +51,8 @@ quux = $(baz)
 qux = Hello $(quux)
 quux = Make
 
-corge = start
-corge = $(corge) and add more
+# corge = start
+# corge = $(corge) and add more
 
 test2:
 	@echo "bar=$(bar)"

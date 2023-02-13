@@ -1,0 +1,78 @@
+VERSION  --use-chmod 0.6
+
+# Works
+scratch1:
+    FROM scratch
+    COPY hello /
+    CMD ["./hello"]
+    SAVE IMAGE scratch1
+
+# Works
+scratch2:
+    FROM scratch
+    COPY hello /
+    ENTRYPOINT ["./hello"]
+    SAVE IMAGE scratch2
+
+# Fails (and should)
+scratch3:
+    FROM scratch
+    COPY hello /
+    ENTRYPOINT ./hello
+    SAVE IMAGE scratch3
+
+shellnanigans:
+    FROM busybox:latest
+    SAVE ARTIFACT /bin
+
+shellnanigans2:
+    FROM busybox:latest
+    SAVE ARTIFACT /
+
+# Fails at docker run
+# standard_init_linux.go:228: exec user process caused: no such file or directory
+scratch4:
+    FROM scratch
+    COPY +shellnanigans/bin /bin
+    ENTRYPOINT ["/bin/sh"]
+    SAVE IMAGE scratch4
+
+# Fails
+scratch5:
+    FROM scratch
+    # COPY +shellnanigans/bin /bin
+    COPY testdir2 /
+    COPY testdir /
+    COPY hello /
+    RUN /hello 
+    ENTRYPOINT ["/bin/sh"]
+    SAVE IMAGE scratch5
+
+# Fails
+scratch6:
+    FROM scratch
+    COPY --chmod=1777 +shellnanigans/ /
+    COPY --chmod=1777 testdir /
+    COPY hello /
+    RUN /hello 
+    ENTRYPOINT ["/bin/sh"]
+    SAVE IMAGE scratch6
+
+# works as docker run -it bb1 
+# /bin/sh -c  /usr/bin/earth_debugger /bin/sh -c '/hello'
+bb1:
+    FROM busybox:latest
+    COPY hello /
+    COPY earth_debugger /usr/bin
+    ENTRYPOINT ["/bin/sh"]
+    SAVE IMAGE bb1
+
+
+# Fails (and should)
+# scratch4:
+#     FROM scratch
+#     COPY hello /
+#     COPY +shellnanigans/sh /bin/sc
+#     ENTRYPOINT ./hello
+#     SAVE IMAGE agb/scratch4
+

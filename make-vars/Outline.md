@@ -1,7 +1,3 @@
-https://earthly.dev/blog/using-makefile-wildcards/
-https://earthly.dev/blog/undrstndng-and-usng-makefilevar/
-https://earthly.dev/blog/make-flags/
-
 # Intro
 Hey, in this video I'm going to show you how variables work in make files. It might seem like a simple topic, but actually its a bit complex. Make files can get a little bit wild, and follw along with me today, and you'll be the expert at make files in no time.
 
