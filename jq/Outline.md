@@ -39,7 +39,6 @@ echo "[1,2,3,4,5]" | jq '.[-2:]'
 curl https://api.github.com/repos/stedolan/jq/issues?per_page=5 | \
  jq '.[4].title'
 
-
 curl https://api.github.com/repos/stedolan/jq/issues?per_page=5 | \
  jq '.[].title'
 
@@ -120,6 +119,19 @@ curl https://api.github.com/repos/stedolan/jq/issues/2289 | \
 - There are built in functions and you can write your own
 -- They act as filters
 
+# Earthly
+
+ - Ok, the last and coolest things I've got to show is bring this all together.
+- But first I want to tell you a little about Earthly.
+- Earthly, is a open source build tool.
+- No software developer likes their build pipeline.
+- Nobody likes waiting for a build to finish, or rerunning things because the build is flaky.
+- With Earthly, you write your build in a format similar to a Dockerfile, or a make file and you can run your build locally or in CI.
+- You'd be surprized how big of a difference this can make and because the build runs in a container, it runs the same on your local as it does in CI. 
+- It's like docker, but for CI. Go to EArthly.dev, or like in the description to check it out.
+- Alright, now let me show you how to bring all this JQ skills together.
+
+
 # Maps and Selects
 
 curl https://api.github.com/repos/stedolan/jq/issues?per_page=100 | \
@@ -136,4 +148,9 @@ jq '[ { key1: .key1, key2: .key2 }  ]'
 
 jq 'map({ order-of-magitude: .items | length | tostring | length }) 
 
+# Outro
 
+If you looking to learn more about building software, subscribe to the channel. If you want to learn more about Earthly, check the link in the description. 
+
+And let me know your JQ questions in the comments. It might inspire a new vidoe. 
+In fact, let me know whatever you want to see in a video.
