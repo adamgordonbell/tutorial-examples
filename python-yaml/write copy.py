@@ -1,8 +1,7 @@
 import yaml
 import json 
-from typing import Any, List, Dict
 
-data1 : dict[str,Any]= {
+data1 = {
     'Name':'John Doe',
     'Position':'DevOps Engineer',
     'Location':'England',
@@ -13,9 +12,14 @@ data1 : dict[str,Any]= {
     :['Python', 'JavaScript','Golang']}
 }
 
-print(data1)
+yaml_output = yaml.dump(data1, sort_keys=False) 
 
-data2 : List[Dict[str,Any]]= [
+print(yaml_output)
+
+with open('./output/data1.yaml','w') as file:
+    file.write(yaml_output)
+
+data2 = [
     {
     'apiVersion': 'v1',
     'kind':'persistentVolume',
@@ -37,4 +41,24 @@ data2 : List[Dict[str,Any]]= [
     }
 ]
 
-print(data2)
+yaml_output2 = yaml.dump_all(data2, sort_keys=False) 
+
+print(yaml_output2)
+
+with open('./output/data2.yaml','w') as file:
+    file.write(yaml_output2)
+
+with open('./output/data1.yaml','r') as file:
+    data3 = yaml.safe_load(file)
+
+print(data3)
+data3['Age'] = 99
+data3['othername'] = "Tom Adams"
+
+yaml_str = yaml.safe_dump(data3, sort_keys=False)
+
+with open('./output/data3.yaml', 'w') as file:
+    file.write(yaml_str)
+
+with open('./output/data4.json','w') as file:
+    json.dump(data3, file)
