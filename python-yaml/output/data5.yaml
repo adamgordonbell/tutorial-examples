@@ -1,6 +1,3 @@
-Name: John Doe
-Position: DevOps Engineer
-Location: England
 Age: 99
 Experience:
   GitHub: Software Engineer
@@ -13,4 +10,7 @@ Languages:
   - Python
   - JavaScript
   - Golang
+Location: England
+Name: John Doe
 OtherName: Tom Adams
+Position: DevOps Engineer
