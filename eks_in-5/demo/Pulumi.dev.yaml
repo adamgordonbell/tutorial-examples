@@ -1,0 +1,7 @@
+config:
+  aws:region: ca-central-1
+  demonov:desiredClusterSize: "2"
+  demonov:eksNodeInstanceType: t3.medium
+  demonov:maxClusterSize: "2"
+  demonov:minClusterSize: "2"
+  demonov:vpcNetworkCidr: 10.0.0.0/16

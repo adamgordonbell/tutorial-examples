@@ -14,6 +14,19 @@ https://www.youtube.com/watch?v=wvUCZiRaX5w&list=PLyy8Vx2ZoWloyj3V5gXzPraiKStO2G
 
 Let's show a quick demo of how to deploy an AWS EKS cluster and an application into that cluster using Pulumi. We'll start by installing the package dependencies
 
+-  pulumi new
+- kubernetes-aws-python
+- ca-central-1
+- show clicking in
+- show the code, click around, vpc, simplify
+- show "    authentication_mode=eks.AuthenticationMode.API"
+- Add
+    tags={
+        "environment":"demo",
+        "managed-by":"pulumi"
+    },
+    create_oidc_provider=True
+
 - User installs dependencies (`npm install`)
 - initializes stack (`pulumi stack init`), 
 - sets region, 
