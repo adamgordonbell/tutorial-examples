@@ -18,12 +18,13 @@ Let's show a quick demo of how to deploy an AWS EKS cluster and an application i
 - kubernetes-aws-python
 - ca-central-1
 - show clicking in
-- show the code, click around, vpc, simplify
+- copy in simplify exmaple
+- show the code, click around, vpc, 
 - show "    authentication_mode=eks.AuthenticationMode.API"
 - Add
     tags={
-        "environment":"demo",
-        "managed-by":"pulumi"
+        "managed-by":"pulumi",
+        "owner":"v-adam@pulumi.com"
     },
     create_oidc_provider=True
 
