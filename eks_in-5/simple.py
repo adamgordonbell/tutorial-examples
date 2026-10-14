@@ -13,8 +13,8 @@ eks_cluster = eks.Cluster("eks-cluster",
     public_subnet_ids=eks_vpc.public_subnet_ids,
     private_subnet_ids=eks_vpc.private_subnet_ids,
     instance_type="t3.medium",
-    desired_capacity=2,
-    min_size=1,
+    desired_capacity=0,
+    min_size=0,
     max_size=2,
     endpoint_public_access=True
     )
